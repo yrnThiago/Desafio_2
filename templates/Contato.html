@@ -11,20 +11,7 @@
         <div class="apresentacao__conteudo__divider"></div>
 
         <form class="formulario" action="">
-            <div class="formulario__email">
-                <label for="email">Seu e-mail:</label><br>
-                <input class="formulario__input" type="email" id="email" placeholder="seuemail@email.com">
-            </div>
-
-            <div class="formulario__assunto">
-                <label for="assunto">Assunto:</label><br>
-                <input class="formulario__input" type="text" id="assunto" placeholder="Assunto">
-            </div>
-
-            <div class="formulario__descricao">
-                <label for="descricao">Descrição:</label><br>
-                <textarea rows="2" cols="29" id="descricao" placeholder="Isso é uma descrição..."></textarea>
-            </div>
+            {{ inputs_forms | safe }}
 
             <div class="formulario__botao_enviar">
                 <input type="submit" id="enviar">
