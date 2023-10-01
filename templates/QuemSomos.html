@@ -4,11 +4,7 @@
 <main class="apresentacao">
     <section class="apresentacao__conteudo">
         <div class="apresentacao__conteudo__texto">
-            <h1>{% block title %}Quem somos{% endblock %}</h1>
-            <p>Lorem <strong>ipsum dolor</strong> sit amet consectetur adipisicing elit. Sequi odit quibusdam hic exercitationem ut esse, quae consectetur facilis? Et odit obcaecati impedit voluptates corrupti cupiditate sequi, sint incidunt tenetur neque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit quibusdam hic exercitationem ut esse, quae consectetur facilis? Et odit obcaecati impedit voluptates corrupti cupiditate sequi, sint incidunt tenetur neque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit quibusdam hic exercitationem ut esse, quae consectetur facilis? Et odit obcaecati impedit voluptates corrupti cupiditate sequi, sint incidunt tenetur neque.
-            </p>
+            {{ about_us | safe }}
         </div>
 
         <div class="apresentacao__conteudo__motivos">
@@ -23,11 +19,7 @@
         <div class="apresentacao__conteudo__divider"></div>
 
         <div class="apresentacao__conteudo__texto">
-            <h1>Objetivos</h1>
-            <p>Lorem <strong>ipsum dolor</strong> sit amet consectetur adipisicing elit. Sequi odit quibusdam hic exercitationem ut esse, quae consectetur facilis? Et odit obcaecati impedit voluptates corrupti cupiditate sequi, sint incidunt tenetur neque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit quibusdam hic exercitationem ut esse, quae consectetur facilis? Et odit obcaecati impedit voluptates corrupti cupiditate sequi, sint incidunt tenetur neque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi odit quibusdam hic exercitationem ut esse, quae consectetur facilis? Et odit obcaecati impedit voluptates corrupti cupiditate sequi, sint incidunt tenetur neque.
-            </p>
+            {{ objectives | safe }}
         </div>
     </section>
 </main>
