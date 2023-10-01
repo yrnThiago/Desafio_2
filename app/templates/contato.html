@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Contato{% endblock %}
+
 {% block body %}
 <main class="apresentacao">
     <section class="apresentacao__conteudo">
@@ -10,7 +12,17 @@
         <div class="apresentacao__conteudo__divider"></div>
 
         <form class="formulario" action="">
-            {{ inputs_forms | safe }}
+            <div class="formulario__email">
+                {{ input_email | safe }}
+            </div>
+
+            <div class="formulario__assunto">
+                {{ input_assunto | safe }}
+            </div>
+
+            <div class="formulario__descricao">
+                {{ input_descricao | safe }}
+            </div>
 
             <div class="formulario__botao_enviar">
                 <input type="submit" id="enviar">
