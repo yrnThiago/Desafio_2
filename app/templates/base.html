@@ -11,14 +11,14 @@
 <body>
     <div class="header__background__linha_azul"></div>
     <header class="cabecalho">
-        <a href="{{ url_for('home') }}">
+        <a href="{{ url_for('home.home') }}">
             <img src="static/imagens/logo.png" alt="Logo da UNES"/>
         </a>
 
         <div class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="{{ url_for('home') }}">Home</a> |
-            <a class="cabecalho__menu__link" href="{{ url_for('quemsomos') }}">Quem somos</a> |
-            <a class="cabecalho__menu__link" href="{{ url_for('contato') }}">Contato</a>
+            <a class="cabecalho__menu__link" href="{{ url_for('home.home') }}">Home</a> |
+            <a class="cabecalho__menu__link" href="{{ url_for('quemsomos.quemsomos') }}">Quem somos</a> |
+            <a class="cabecalho__menu__link" href="{{ url_for('contato.contato') }}">Contato</a>
         </div>
     </header>
     {% block body %}{% endblock %}
