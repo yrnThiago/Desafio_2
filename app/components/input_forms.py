@@ -1,4 +1,4 @@
-from constants.Contato import form_fields
+from app.constants.contato import form_fields
 
 form_inputs_html, input_element = "", ""
 for form_input in form_fields:
