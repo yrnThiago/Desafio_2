@@ -11,7 +11,7 @@
 
         <div class="apresentacao__conteudo__divider"></div>
 
-        <form class="formulario" action="">
+        <form class="formulario" action="{{ url_for('contato.add') }}" method="POST">
             <div class="formulario__email">
                 {{ input_email | safe }}
             </div>
@@ -29,6 +29,34 @@
             </div>
 
         </form>
+    </section>
+    <section class="apresentacao__contatos">
+        <table>
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Email</th>
+               <th>Assunto</th>
+               <th>Descrição</th>
+               <th>Ações</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for contact in contacts %}
+               <tr>
+                  <td>{{ contact.id }}</td>
+                  <td>{{ contact.email }}</td>
+                  <td>{{ contact.assunto }}</td>
+                  <td>{{ contact.descricao }}</td>
+                  <td>
+                      <a href="{{ url_for('contato.update_by_id', contact_id=contact.id) }}">Editar</a>
+                      <a href="{{ url_for('contato.delete_by_id', contact_id=contact.id) }}">Apagar</a>
+                  </td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
     </section>
 </main>
 {% endblock %}

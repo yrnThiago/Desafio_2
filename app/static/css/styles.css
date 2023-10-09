@@ -59,6 +59,10 @@ body {
     margin: var(--margem-padrao);
 }
 
+.apresentacao__contatos {
+    margin: var(--margem-padrao);
+}
+
 .formulario {
     display: flex;
     flex-direction: column;
