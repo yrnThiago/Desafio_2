@@ -12,9 +12,9 @@ def create_app(config_name):
 
     db.init_app(app)
 
-    from app.routes.home import home_blueprint
-    from app.routes.quem_somos import quem_somos_blueprint
-    from app.routes.contato import contato_blueprint
+    from app.views.home import home_blueprint
+    from app.views.quem_somos import quem_somos_blueprint
+    from app.views.contato import contato_blueprint
 
     app.register_blueprint(home_blueprint)
     app.register_blueprint(quem_somos_blueprint)

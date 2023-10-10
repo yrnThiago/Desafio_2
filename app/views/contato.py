@@ -44,7 +44,7 @@ def get_by_id(contact_id: int):
 
             return make_response(jsonify(mensagem=f"Contato {contact_id} atualizado com sucesso!", dados=contact))
 
-        return make_response(jonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
+        return make_response(jsonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
 
     return contato()
 
