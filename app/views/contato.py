@@ -2,7 +2,6 @@ from flask import Blueprint, render_template, make_response, jsonify, request, r
 from app.components.base_title_text import base_title_text
 from app.components.base_input_text import base_input_text
 from app.constants.contato import CONTACT_TEXT, EMAIL_INPUT, ASSUNTO_INPUT, DESCRICAO_INPUT
-from app.models.Contato import Contato
 from app.controllers.Contato import ContatoController
 
 contato_blueprint = Blueprint('contato', __name__)
@@ -18,64 +17,24 @@ def contato():
 
 @contato_blueprint.route('/contato/add', methods=["GET", "POST"])
 def add():
-    if request.method == "POST":
-        email = request.form.get("email")
-        assunto = request.form.get("assunto")
-        descricao = request.form.get("descricao")
-
-        novo_contato = ContatoController.add(email, assunto, descricao)
-
-    return redirect(url_for("contato.contato"))
+    return ContatoController.add(request)
 
 
 @contato_blueprint.route('/contato/api/', methods=["GET"])
 def get_many():
-    contatos = Contato.get_all()
-
-    return make_response(jsonify(contatos))
+    return make_response(jsonify(ContatoController.get_many()))
 
 
 @contato_blueprint.route('/contato/<int:contact_id>/', methods=["GET"])
 def get_by_id(contact_id: int):
-    contact = Contato.query.filter_by(id=contact_id).first()
-    if request.method == "GET":
-        if contact:
-            print(contact)
-
-            return make_response(jsonify(mensagem=f"Contato {contact_id} atualizado com sucesso!", dados=contact))
-
-        return make_response(jsonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
-
-    return contato()
+    return ContatoController.get_by_id(contact_id)
 
 
 @contato_blueprint.route('/contato/<int:contact_id>/update', methods=["GET", "PUT"])
 def update_by_id(contact_id: int):
-    contact = Contato.query.filter_by(id=contact_id).first()
-    if request.method == "PUT":
-        if contact:
-            contact.update(request.json)
-
-            return make_response(jsonify(mensagem=f"Contato {contact_id} atualizado com sucesso!", dados=request.json))
-
-        return make_response(jsonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
-
-    return contato()
+    return ContatoController.update_by_id(request, contact_id)
 
 
 @contato_blueprint.route('/contato/<int:contact_id>/delete', methods=["GET", "DELETE"])
 def delete_by_id(contact_id: int):
-    contact = Contato.query.filter_by(id=contact_id).first()
-    if request.method == "DELETE":
-        if contact:
-            contact.apagar()
-
-            return make_response(jsonify(mensagem=f"Contato {contact_id} apagado com sucesso!"))
-
-        return make_response(jsonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
-
-    elif request.method == "GET":
-        if contact:
-            contact.apagar()
-
-        return redirect(url_for("contato.contato"))
+    return ContatoController.delete_by_id(request, contact_id)
