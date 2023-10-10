@@ -47,8 +47,9 @@ class ContatoController:
     @staticmethod
     def update_by_id(request, contact_id):
         contact = contato_service.get_by_id(contact_id)
-        new_body = request.json
+
         if request.method == "PUT":
+            new_body = request.json
             if contact:
                 contact_to_update = contato_service.update_by_id(contact_id, new_body)
                 contact_to_update = {"email": contact_to_update.email, "assunto": contact_to_update.assunto,
@@ -60,10 +61,13 @@ class ContatoController:
             return make_response(jsonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
 
         elif request.method == "GET":
+            new_body = {"email": "testemailASDSAD@email.com", "assunto": "assunto teste 5", "descricao": "descricao teste 5"}
             if contact:
-                contato_service.delete_by_id(contact_id)
+                contact_to_update = contato_service.update_by_id(contact_id, new_body)
+                contact_to_update = {"email": contact_to_update.email, "assunto": contact_to_update.assunto,
+                                     "descricao": contact_to_update.descricao}
 
-            return redirect(url_for("contato.contato"))
+                return redirect(url_for("contato.contato"))
 
     @staticmethod
     def delete_by_id(request, contact_id):
