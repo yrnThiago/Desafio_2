@@ -25,7 +25,7 @@
             </div>
 
             <div class="formulario__botao_enviar">
-                <input type="submit" id="enviar">
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
 
         </form>
@@ -51,8 +51,80 @@
                   <td>{{ contact.assunto }}</td>
                   <td>{{ contact.descricao }}</td>
                   <td>
-                      <a href="{{ url_for('contato.update_by_id', contact_id=contact.id) }}">Editar</a>
-                      <a href="{{ url_for('contato.delete_by_id', contact_id=contact.id) }}">Apagar</a>
+                    <!-- Botão Editar -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalEditar" data-bs-whatever="@editar">Editar</button>
+
+                    <!-- Modal Editar -->
+                    <div class="modal fade" id="exampleModalEditar" tabindex="-1" aria-labelledby="exampleModalLabelEditar" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabelEditar">Tem certeza que deseja editar esse contato?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="{{ url_for('contato.update_by_id', contact_id=contact.id) }}" method="POST">
+
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">ID</span>
+                                            <input type="text" name="id" id="id" class="form-control" placeholder="id" aria-label="id" value="{{ contact.id }}" aria-describedby="basic-addon1" disabled>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">@</span>
+                                            <input type="email" name="email" id="assunto" class="form-control" placeholder="email" aria-label="email" value="{{ contact.email }}" aria-describedby="basic-addon1">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="assunto" class="col-form-label">Assunto:</label>
+                                            <textarea class="form-control" name="assunto" id="asssunto">{{ contact.assunto }}</textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="descricao" class="col-form-label">Descrição:</label>
+                                            <textarea class="form-control" name="descricao" id="descricao">{{ contact.descricao }}</textarea>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                            <button type="submit" class="btn btn-primary">Editar</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão Apagar -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalApagar" data-bs-whatever="@apagar">Apagar</button>
+
+                    <!-- Modal Apagar -->
+                    <div class="modal fade" id="exampleModalApagar" tabindex="-1" aria-labelledby="exampleModalLabelApagar" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabelApagar">Tem certeza que deseja apagar esse contato?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">ID</span>
+                                        <input type="text" class="form-control" placeholder="id" aria-label="id" value="{{ contact.id }}" aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">@</span>
+                                        <input type="text" class="form-control" placeholder="email" aria-label="email" value="{{ contact.email }}" aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>       
+                                    <a class="btn btn-danger" role="button" href="{{ url_for('contato.delete_by_id', contact_id=contact.id) }}">Apagar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </td>
                </tr>
             {% endfor %}
