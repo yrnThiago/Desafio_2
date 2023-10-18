@@ -15,10 +15,10 @@ class ContatoService:
     def get_by_id(self, contact_id):
         return self.contato_repository.get_by_id(contact_id)
 
-    def update_by_id(self, contact_id, new_body):
+    def update_by_id(self, contact_id, email, assunto, descricao):
         contact_to_update = self.contato_repository.get_by_id(contact_id)
 
-        return self.contato_repository.update_by_id(contact_to_update, new_body)
+        return self.contato_repository.update_by_id(contact_to_update, email, assunto, descricao)
 
     def delete_by_id(self, contact_id):
         contact_to_delete = self.contato_repository.get_by_id(contact_id)

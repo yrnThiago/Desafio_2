@@ -1,15 +1,20 @@
 from app.models.Contato import Contato
 from app import db
+from sqlalchemy.exc import IntegrityError
 
 
 class ContatoRepository:
     @staticmethod
     def add(email, assunto, descricao):
-        new_contact = Contato(email, assunto, descricao)
-        db.session.add(new_contact)
-        db.session.commit()
+        try:
+            new_contact = Contato(email, assunto, descricao)
+            db.session.add(new_contact)
+            db.session.commit()
 
-        return new_contact
+            return new_contact
+
+        except IntegrityError as ie:
+            print(ie)
 
     @staticmethod
     def get_many():
@@ -20,10 +25,10 @@ class ContatoRepository:
         return Contato.query.filter_by(id=contact_id).first()
 
     @staticmethod
-    def update_by_id(contact, new_body):
-        contact.email = new_body.get("email")
-        contact.assunto = new_body.get("assunto")
-        contact.descricao = new_body.get("descricao")
+    def update_by_id(contact, email, assunto, descricao):
+        contact.email = email
+        contact.assunto = assunto
+        contact.descricao = descricao
 
         db.session.commit()
 

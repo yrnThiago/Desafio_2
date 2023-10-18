@@ -22,7 +22,7 @@ class ContatoController:
                     return redirect(url_for("contato.contato"))
 
                 return make_response(jsonify(mensagem="Email, Assunto e Descrição são obrigatórios!"))
-
+            
             if request.json:
                 email = request.json.get("email")
                 assunto = request.json.get("assunto")
@@ -55,16 +55,22 @@ class ContatoController:
         if contact is None: return make_response(jsonify(mensagem=f"Contato com id {contact_id} não encontrado!"))
 
         if request.method == "PUT":
-            new_body = request.json
-            contact_to_update = contato_service.update_by_id(contact_id, new_body)
+            email = request.json.get("email")
+            assunto = request.json.get("assunto")
+            descricao = request.json.get("descricao")
+
+            contact_to_update = contato_service.update_by_id(contact_id, email, assunto, descricao)
             contact_to_update = get_body(contact_to_update)
 
             return make_response(
                 jsonify(mensagem=f"Contato {contact_id} atualizado com sucesso!", dados=contact_to_update))
 
-        elif request.method == "GET":
-            new_body = {"email": "testemailASDSAD@email.com", "assunto": "assunto teste 5", "descricao": "descricao teste 5"}
-            contact_to_update = contato_service.update_by_id(contact_id, new_body)
+        elif request.method == "POST":
+            email = request.form.get("email")
+            assunto = request.form.get("assunto")
+            descricao = request.form.get("descricao")
+
+            contact_to_update = contato_service.update_by_id(contact_id, email, assunto, descricao)
             contact_to_update = get_body(contact_to_update)
 
             return redirect(url_for("contato.contato"))
