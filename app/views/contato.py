@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, make_response, jsonify, request, redirect, url_for
+from flask import Blueprint, render_template, make_response, jsonify, request
 from app.components.base_title_text import base_title_text
 from app.components.base_input_text import base_input_text
 from app.constants.contato import CONTACT_TEXT, EMAIL_INPUT, ASSUNTO_INPUT, DESCRICAO_INPUT
@@ -30,7 +30,7 @@ def get_by_id(contact_id: int):
     return ContatoController.get_by_id(contact_id)
 
 
-@contato_blueprint.route('/contato/<int:contact_id>/update', methods=["GET", "PUT"])
+@contato_blueprint.route('/contato/<int:contact_id>/update', methods=["POST", "PUT"])
 def update_by_id(contact_id: int):
     return ContatoController.update_by_id(request, contact_id)
 
