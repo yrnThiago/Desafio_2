@@ -11,11 +11,20 @@
 
         <div class="apresentacao__conteudo__motivos">
             <h1>{{ qty_reasons }} motivos para estudar</h1>
-            <ol>
+            <div class="accordion accordion-flush" id="motivos_para_estudar">
                 {% for reason in reasons %}
-                <li>{{ reason }}</li>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{reason[0]}}" aria-expanded="false" aria-controls="flush-collapse{{reason[0]}}">
+                        {{ reason }}
+                      </button>
+                    </h2>
+                    <div id="flush-collapse{{reason[0]}}" class="accordion-collapse collapse" data-bs-parent="#motivos_para_estudar">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    </div>
+                </div>
                 {% endfor %}
-            </ol>
+            </div>
         </div>
 
         <div class="apresentacao__conteudo__divider"></div>
