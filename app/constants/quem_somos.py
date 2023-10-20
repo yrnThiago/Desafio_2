@@ -1,9 +1,9 @@
 reasons_to_study = [
-    "Material sempre atualizado",
-    "Tablets em sala de aula",
-    "Professores renomados",
-    "Universidade bem avaliada",
-    "Ótima localização"
+    {"title": "Material sempre atualizado", "text": "Texto 1"},
+    {"title": "Tablets em sala de aula", "text": "Texto 2"},
+    {"title": "Professores renomados", "text": "Texto 3"},
+    {"title": "Universidade bem avaliada", "text": "Texto 4"},
+    {"title": "Ótima localização", "text": "Texto 5"}
 ]
 
 ABOUT_US_TEXT = {
