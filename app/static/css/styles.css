@@ -80,6 +80,12 @@ body {
     margin-top: 3.5rem;
 }
 
+.reason:hover{
+    .reason__title {
+        color: blue;
+    }
+}
+
 @media(max-width: 680px) {
     .cabecalho {
         flex-direction: column;
