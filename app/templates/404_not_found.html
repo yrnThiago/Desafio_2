@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada! </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/404_not_found.css') }}">
+</head>
+<body>
+    <main>
+        <div class="background_azul">
+            <div class="logo">
+                <img src="../static/imagens/icone_logo.png" alt="" width="50px" height="50px">
+            </div>
+
+            <div class="not_found_message">
+                <div class="not_found_message__title">
+                    <h1>404: Página não encontrada!</h1>
+                </div>
+                <div class="not_found_message__text">
+                    <p>Looks like you're waiting for something that will never show.</p>
+                </div>
+            </div>
+
+            <div class="return_homepage">
+                <button class="return_homepage__button">
+                    <a href="{{ url_for('home.home') }}">
+                        <h5 class="return_homepage__button__text">Voltar para Home</h5>
+                    </a>
+                </button>
+            </div>
+        </div>
+        
+    </main>
+    
+</body>
+</html>
