@@ -71,6 +71,10 @@ body {
     padding-top: 100px;
 }
 
+.apresentacao__conteudo_motivos_cards {
+    background-color: #C5DFF8;
+}
+
 .apresentacao__conteudo__direitos {
     text-align: center;
     margin-top: 3.5rem;
