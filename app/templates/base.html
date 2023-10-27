@@ -39,6 +39,113 @@
         </div>
     </nav>
     {% block body %}{% endblock %}
+    <div class="banner_contato">
+        <div class="banner__info__logo">
+            <img src="https://img.freepik.com/vetores-premium/formatura-do-aluno-no-conceito-academico-da-faculdade-em-ilustracao-de-desenho-animado_201904-803.jpg" alt="" width="230px" height="230px" class="rounded-circle">
+        </div>
+
+        <div class="banner__info__actions">
+            <h4 class="text-break">Escolha educar-se, escolha o sucesso, escolha a UNES!</h4>
+            <p class="text-break">Fale com um de nossos especialistas e garanta o seu futuro promissor. </p>
+            <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+                <p class="banner__btn_title">Entre em contato</p>
+            </a>
+        </div>
+    </div>
+    
+    <footer class="rodape">
+        <div class="rodape__info">
+
+            <div class="rodape__info__tile">
+                <div class="rodape__info_title pb-5">
+                    <img src="../static/imagens/icone_logo.png" alt="Ícone Logo da Unes" width="40px" height="40px">
+                </div>
+                <div class="rodape__info__social_media_icons">
+                    <a class="social_media_icon border-1 border-white rounded-circle px-2 py-1" href="#">
+                        <i class="mdi mdi-facebook"></i>
+                    </a>
+
+                    <a class="social_media_icon border-1 border-white rounded-circle px-2 py-1" href="#">
+                        <i class="mdi mdi-instagram"></i>
+                    </a>
+
+                    <a class="social_media_icon border-1 border-white rounded-circle px-2 py-1" href="#">
+                        <i class="mdi mdi-linkedin"></i>
+                    </a>
+
+                    <a class="social_media_icon border-1 border-white rounded-circle px-2 py-1" href="#">
+                        <i class="mdi mdi-youtube"></i>
+                    </a>
+                </div>
+                <p>2023 - Todos os direitos reservados</p>
+            </div>
+            
+            
+            <div class="rodape__info__tile">
+                <div class="rodape__info_title">
+                    <h5>Institucional</h5>
+                </div>
+                <ul class="rodape__info_links">
+                    <li class="rodape__info_links_link">
+                        <a class="links_link_text" href="#">Sobre nós</a>
+                    </li>
+                    <li class="rodape__info_links_link">
+                        <a class="links_link_text" href="#">Fale conosco</a>
+                    </li>
+                    <li class="rodape__info_links_link">
+                        <a class="links_link_text" href="#">Motivos para estudar</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rodape__info__tile">
+                <div class="rodape__info_title">
+                    <h5>Políticas</h5>
+                </div>
+                <ul class="rodape__info_links">
+                    <li class="rodape__info_links_link">
+                        <a class="links_link_text" href="#">Política de Privacidade</a>
+                    </li>
+                    <li class="rodape__info_links_link">
+                        <a class="links_link_text" href="#">Política de Cookies</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rodape__info__tile">
+                <div class="rodape__info_title">
+                    <h5>Atendimento</h5>
+                </div>
+                <ul class="rodape__info_links">
+                    <li class="rodape__info_links_link">
+                        <div class="d-block opacity-75">
+                            <p class="m-0">Segunda a Sexta</p>
+                            <div class="d-flex">
+                                <i class="pe-1 mdi mdi-clock-outline"></i>
+                                <p class="m-0">06h às 22h</p>
+                            </div>
+                        </div>
+
+                    <li class="rodape__info_links_link">
+                        <i class="pe-1 opacity-75 mdi mdi-whatsapp"></i>
+                        <a class="links_link_text" href="#">(12) 98864-3928</a>
+                    </li>
+                    <li class="rodape__info_links_link">
+                        <i class="pe-1 opacity-75 mdi mdi-email-outline"></i>
+                        <a class="links_link_text" href="#">falecom@unes.com.br</a>
+                    </li>
+                    <li class="rodape__info_links_link">
+                        <i class="pe-1 opacity-75 mdi mdi-email-outline"></i>
+                        <a class="links_link_text" href="#">imprensa@unes.com.br</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="rodape__divider"></div>
+        <div class="rodape__texto">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, in nostrum a dolores animi, ipsum sunt autem error, officiis optio blanditiis mollitia! Necessitatibus dolore fugiat quod, obcaecati minus eligendi. Minima. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 <footer class="rodape">
