@@ -9,22 +9,24 @@
             {{ about_us | safe }}
         </div>
 
-        <div class="apresentacao__conteudo__motivos">
-            <div class="container text-center">
+        <div class="apresentacao__conteudo">
+            <div class="apresentacao__conteudo_motivos container text-center">
                 <div class="row">
                     <div class="col m-5">
-                        <h2 class=""><u><strong>Motivos para estudar</strong></u></h2>
+                        <h2 class="apresentacao__conteudo__texto_title">Motivos para estudar</h2>
                     </div>
                 </div>
-                <div class="row justify-content-evenly">
+                <div class="apresentacao__conteudo_motivos_cards row justify-content-evenly pt-5 pb-5">
                     {% for reason in reasons %}
-                    <div class="reason col-sm-4 m-0">
-                        <div class="reason__title">
-                            <i class="reason_icon {{ reason.get('icon') }}"></i>
-                            <h3>{{ reason.get('title') }}</h3>
+                    <div class="card border-0 rounded-2 bg-white shadow" style="width: 18%;">
+                        <div class="card-body">
+                          <h5 class="card-title p-2">{{ reason.get('title')}}</h5>
+                          <p class="card-text text-start">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam aperiam harum mollitia, maxime.</p>
+                          
+                          <div class="d-flex justify-content-end pt-4 pb-1">
+                            <a href="#" class="btn btn-outline-primary justify-content-end p-1 border-0">Saiba mais <i class="mdi mdi-arrow-right"></i></a>
+                          </div>
                         </div>
-                        <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto atque reiciendis fugit ad nobis aut distinctio natus omnis molestiae, vitae ipsam</p>
-                        <!-- <p>{{ reason.get('text') }}</p> -->
                     </div>
                     {% endfor %}
                 </div>
