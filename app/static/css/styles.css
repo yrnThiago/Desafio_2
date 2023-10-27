@@ -1,8 +1,19 @@
 :root {
     --cor-de-fundo-primaria: #FFFFFF;
-    --cor-de-fundo-secundaria: #6D78A8;
+    --cor-de-fundo-secundaria: #F1F4FF;
+    --cor-de-fundo-terciaria: #F2F2F5;
+    --cor-de-fundo-amarelo: #FCF6E6;
+
+    --cor-botao_hover: #3343CA;
+
+    --cor-primaria: #3D4ED7;
+    --cor-secundaria: #010038;
+    
     --cor-de-fundo-capa: #EFEFEF;
     --cor-divider-primaria: grey;
+
+    --transicao-padrao: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+    --transform-padrao: translateY(-5px);
 
     --tamanho-tela-disponivel: 65%;
     --margem-padrao: 0px calc((100% - var(--tamanho-tela-disponivel)) / 2);
@@ -11,9 +22,15 @@
 }
 
 body {
-    min-height: 100vw;
-    margin: 0px;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     background-color: var(--cor-de-fundo-primaria);
+    flex: 1;
+    font-family: Halcyon,Verdana,sans-serif;
+    font-weight: 500;
 }
 
 .header__background__linha_azul {
@@ -43,8 +60,15 @@ body {
     width: var(--tamanho-tela-disponivel);
 }
 
-.apresentacao__conteudo__texto, .apresentacao__conteudo__motivos {
+.apresentacao__conteudo__motivos {
     margin: var(--margem-padrao);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.apresentacao__conteudo__texto_title {
+    color: var(--cor-primaria);
+    padding-top: 100px;
 }
 
 .apresentacao__conteudo__direitos {
@@ -63,6 +87,22 @@ body {
     margin: var(--margem-padrao);
 }
 
+.cards_vantagens {
+    padding-bottom: 100px;
+    margin: 0px 10%;
+}
+
+.cards_vantagens__card {
+    background-color: var(--cor-de-fundo-amarelo);
+    border: transparent;
+    padding: 25px;
+    width: 100%;
+}
+
+.card-title {
+    color: var(--cor-primaria);
+}
+
 .formulario {
     display: flex;
     flex-direction: column;
@@ -75,9 +115,131 @@ body {
     width: 250px;
 }
 
+.banner_contato {
+    background-color: var(--cor-de-fundo-terciaria);
+    padding: 4% 17.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner__info__logo {
+    display:flex;
+    width: 40%;
+    justify-content: right;
+}
+
+.banner__info__actions {
+    width: 50%;
+}
+
+.banner__btn {
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding-inline: 20px;
+    text-decoration: none;
+    background-color: var(--cor-primaria);
+    transition: var(--transicao-padrao);
+    width: auto;
+}
+
+.banner__btn_title {
+    margin: 0;
+    padding: 10px 0px 10px 0px;
+    color: var(--cor-de-fundo-capa);
+}
+
 .rodape {
+    background-color: var(--cor-secundaria);
+    color: #F1F4FF;
     text-align: center;
-    margin-top: 3.5rem;
+    bottom: auto;
+}
+
+.rodape__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: var(--margem-padrao);
+    padding-top: 120px;
+    padding-bottom: 30px;
+}
+
+.rodape__info_title {
+    text-align: start;
+    padding-bottom: 20px;
+}
+
+.rodape__info__social_media_icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.social_media_icon {
+    border: 1px solid transparent;
+    border: 50%;
+}
+
+.rodape__info_links {
+    padding: 0px;
+    list-style: none;
+}
+
+.rodape__info_links_link {
+    text-transform: none;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.links_link_text, .social_media_icon{
+    color: #EFEFEF;
+    text-align: start;
+    opacity: 75%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.social_media_icon, .cabecalho__logo {
+    transition: var(--transicao-padrao);
+}
+
+.cabecalho__logo:hover {
+    transform: var(--transform-padrao);
+}
+
+.social_media_icon:hover {
+    opacity: 100%;
+    padding-bottom: 5px;
+    transform: var(--transform-padrao);
+}
+
+.links_link_text:hover {
+    opacity: 100%;
+    text-decoration: underline;
+}
+
+.banner__btn:hover {
+    background-color: var(--cor-botao_hover);
+    transform: var(--transform-padrao);
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+}
+
+.rodape__divider {
+    background-color: var(--cor-primaria);
+    height: 1px;
+    margin: var(--margem-padrao);
+}
+
+.rodape__texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--margem-padrao);
+    padding-top: 25px;
+    opacity: 75%;
 }
 
 .reason:hover{
