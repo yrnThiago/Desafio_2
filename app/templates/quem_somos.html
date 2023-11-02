@@ -16,7 +16,7 @@
                         <h2 class="apresentacao__conteudo__texto_title">Motivos para estudar</h2>
                     </div>
                 </div>
-                <div class="apresentacao__conteudo_motivos_cards row justify-content-evenly pt-5 pb-5">
+                <div class="apresentacao__conteudo_motivos_cards row justify-content-evenly px-4 py-5 rounded-3 shadow-sm">
                     {% for reason in reasons %}
                     <div class="card border-0 rounded-2 bg-white shadow" style="width: 18%;">
                         <div class="card-body">
@@ -32,8 +32,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="apresentacao__conteudo__divider"></div>
 
         <div class="apresentacao__conteudo__texto">
             {{ objectives | safe }}
