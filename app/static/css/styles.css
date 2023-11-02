@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@700&family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+
 :root {
     --cor-de-fundo-primaria: #FFFFFF;
     --cor-de-fundo-secundaria: #F1F4FF;
@@ -29,7 +32,7 @@ body {
     flex-direction: column;
     background-color: var(--cor-de-fundo-primaria);
     flex: 1;
-    font-family: Halcyon,Verdana,sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 500;
 }
 
