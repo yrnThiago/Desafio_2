@@ -53,6 +53,10 @@ body {
     align-self: center;
 }
 
+.nav-link {
+    transition: color 0.4s ease; 
+}
+
 .apresentacao__conteudo__capa {
     display: flex;
     justify-content: center;
@@ -215,6 +219,12 @@ body {
 
 .cabecalho__logo:hover {
     transform: var(--transform-padrao);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: var(--cor-botao_hover);
+
 }
 
 .social_media_icon:hover {
