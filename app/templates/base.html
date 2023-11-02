@@ -16,10 +16,23 @@
             <a href="{{ url_for('home.home') }}" class="cabecalho__logo">
                 <img src="static/imagens/logo.png" alt="Logo da UNES" />
             </a>
-            <div class="d-flex gap-5">
+            <div class="d-flex gap-4 align-items-center">
                 <a class="nav-link" href="{{ url_for('home.home') }}">Home</a>
                 <a class="nav-link" href="{{ url_for('quemsomos.quemsomos') }}">Quem somos</a>
                 <a class="nav-link" href="{{ url_for('contato.contato') }}">Contato</a>
+                <a type="button" class="banner__btn_white" href="{{ url_for('contato.contato') }}">
+                    <p class="p-2 m-0 text-center">2ª via</p>
+                </a>
+                <div class="dropdown">
+                    <button class="btn_dropdown d-flex align-items-center text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <p class="p-2 m-0">Login</p>
+                      <i class="dropdown_icon mdi mdi-menu-down"></i>
+                    </button>
+                    <ul class="dropdown-menu text-start p-3 rounded-4">
+                      <li><a class="nav-link p-2 fw-normal" href="#">Sou Aluno</a></li>
+                      <li><a class="nav-link p-2 fw-normal" href="#">Sou Professor</a></li>
+                    </ul>
+                  </div>
             </div>
         </div>
     </nav>
@@ -33,11 +46,11 @@
           <div class="carousel-item active" style="height: 500px;">
             <img src="static/imagens/pingu.gif" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
-              <p>Lorem ipsum dolor sit amet consectetur</p>
-              <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
-                <p class="banner__btn_title p-3">Entre em contato</p>
-            </a>
+                <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+                <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+                    <p class="banner__btn_title p-3">Entre em contato</p>
+                </a>
             </div>
           </div>
           <div class="carousel-item" style="height: 500px;">
