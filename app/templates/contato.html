@@ -32,16 +32,16 @@
     </section>
     {% if contacts %}
     <section class="apresentacao__contatos">
-        <table>
-         <thead>
-            <tr>
-               <th>ID</th>
-               <th>Email</th>
-               <th>Assunto</th>
-               <th>Descrição</th>
-               <th>Ações</th>
-            </tr>
-         </thead>
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Assunto</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
 
          <tbody>
             {% for contact in contacts %}
