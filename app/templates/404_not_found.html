@@ -9,23 +9,19 @@
 <body>
     <main>
         <div class="background_azul">
-            <div class="logo">
-                <img src="../static/imagens/icone_logo.png" alt="" width="50px" height="50px">
-            </div>
-
             <div class="not_found_message">
                 <div class="not_found_message__title">
                     <h1>404: Página não encontrada!</h1>
                 </div>
                 <div class="not_found_message__text">
-                    <p>Looks like you're waiting for something that will never show.</p>
+                    <p>Parece que você está esperando por uma página que não existe...</p>
                 </div>
             </div>
 
             <div class="return_homepage">
                 <button class="return_homepage__button">
-                    <a href="{{ url_for('home.home') }}">
-                        <h5 class="return_homepage__button__text">Voltar para Home</h5>
+                    <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+                        <p class="banner__btn_title p-3">Voltar para home</p>
                     </a>
                 </button>
             </div>
