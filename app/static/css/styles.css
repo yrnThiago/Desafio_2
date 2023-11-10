@@ -45,12 +45,20 @@ body {
     display: flex;
     justify-content: space-between;
     margin: var(--margem-padrao);
-    padding: 20px 0px;
+    padding: 10px 0px;
+}
+
+.cabecalho__logo_icone, .login_btn_mobile {
+    display: none;
 }
 
 .cabecalho__menu {
     justify-content: space-between;
     align-self: center;
+}
+
+.navbar-toggler {
+    box-shadow: 0;
 }
 
 .nav-link {
@@ -73,7 +81,7 @@ body {
     padding-bottom: 100px;
 }
 
-.apresentacao__conteudo__texto_title {
+.apresentacao__conteudo__texto_title, .apresentacao__conteudo__texto_title_underline {
     color: var(--cor-primaria);
     padding-top: 100px;
 }
@@ -98,8 +106,11 @@ body {
     margin: var(--margem-padrao);
 }
 
+.nossos_numeros {
+    margin: var(--margem-padrao);
+}
+
 .cards_vantagens {
-    padding-bottom: 100px;
     margin: 0px 10%;
 }
 
@@ -145,9 +156,14 @@ body {
 }
 
 .banner__info__logo {
-    display:flex;
+    display: flex;
     width: 40%;
     justify-content: right;
+}
+
+.banner__info__logo_img {
+    width: 230px;
+    height: 230px;
 }
 
 .banner__info__actions {
@@ -161,7 +177,7 @@ body {
     text-decoration: none;
     background-color: var(--cor-primaria);
     transition: var(--transicao-padrao);
-    width: auto;
+    width: 175px;
 }
 
 .banner__btn_white {
@@ -171,7 +187,7 @@ body {
     text-decoration: none;
     background-color: var(--cor-de-fundo-primaria);
     transition: var(--transicao-padrao), background-color 0.4s ease;
-    width: auto;
+    width: 175px;
     color: var(--cor-primaria);
 }
 
@@ -188,8 +204,9 @@ body {
 
 .banner__btn_title {
     margin: 0;
-    padding: 10px 0px 10px 0px;
+    padding: 13px 0px 13px 0px;
     color: var(--cor-de-fundo-capa);
+    font-size: 15px;
 }
 
 .rodape {
@@ -244,12 +261,12 @@ body {
     text-decoration: none;
 }
 
-.social_media_icon, .cabecalho__logo, .dropdown_icon {
+.social_media_icon, .cabecalho__logo, .cabecalho__logo_icone, .dropdown_icon, .rodape__logo {
     transition: var(--transicao-padrao);
 }
 
-.cabecalho__logo:hover {
-    transform: var(--transform-padrao);
+.cabecalho__logo:hover, .rodape__logo {
+    transform: translateX(0px) scale(0.900);
 }
 
 .nav-link:hover {
@@ -286,10 +303,14 @@ body {
     transform: rotate(180deg);
 }
 
-.rodape__divider {
+.rodape__divider, .rodape__divider_mobile {
     background-color: var(--cor-primaria);
     height: 1px;
     margin: var(--margem-padrao);
+}
+
+.rodape__divider_mobile {
+    display: none;
 }
 
 .rodape__texto {
@@ -308,13 +329,61 @@ body {
 }
 
 @media(max-width: 680px) {
-    .cabecalho {
-        flex-direction: column;
+    :root {
+        --tamanho-tela-disponivel: 90%;
+    }
+
+    .cabecalho__logo {
+        display: none;
+    }
+
+    .cabecalho__logo_icone {
+        display: block;
+    }
+    
+    .login_btn_mobile {
+        display: block;
+    }
+
+    .btn_login_desktop {
+        display: none;
+    }
+
+    .banner__info__actions {
+        width: 100%;
         text-align: center;
     }
 
-    .cabecalho__menu {
-        justify-content: center;
-        gap: 15px;
+    .banner_contato {
+        padding: 0px 0px 30px 0px;
+        flex-direction: column;
+        line-height: 150%;
+        gap: 30px;
+    }
+
+    .banner__info__logo_img {
+        width: 128px;
+        height: 128px;
+    }
+
+    .rodape {
+        text-align: start;
+    }
+    
+    .rodape__info {
+        flex-direction: column;
+    }
+
+    .rodape__divider_mobile {
+        display: flex;
+        margin: 0;
+        margin-bottom: 32px;
+    }
+
+    .rodape__texto {
+        font-size: 12px;
+        padding-bottom: 25px;
+        align-items: start;
+        justify-content: start;
     }
 }
