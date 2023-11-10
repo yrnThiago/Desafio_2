@@ -11,18 +11,42 @@
     {% block head %}{% endblock %}
 </head>
 <body>  
-    <nav class="navbar bg-body-white">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="cabecalho container-fluid">
-            <a href="{{ url_for('home.home') }}" class="cabecalho__logo">
-                <img src="static/imagens/logo.png" alt="Logo da UNES" />
+            <a href="{{ url_for('home.home') }}">
+                <img src="static/imagens/logo.png" alt="Logo da UNES" class="cabecalho__logo"/>
+                <img src="static/imagens/icone_logo.png" alt="Logo da UNES" class="cabecalho__logo_icone"/>
             </a>
-            <div class="d-flex gap-4 align-items-center">
+            <div class="dropdown login_btn_mobile">
+                <button class="btn_dropdown d-flex align-items-center text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <p class="p-2 m-0">Login</p>
+                  <i class="dropdown_icon mdi mdi-menu-down"></i>
+                </button>
+                <ul class="dropdown-menu text-start p-3 rounded-4">
+                  <li><a class="nav-link p-2 fw-normal" href="#">Sou Aluno</a></li>
+                  <li><a class="nav-link p-2 fw-normal" href="#">Sou Professor</a></li>
+                </ul>
+            </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-3">
+              <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('home.home') }}">Home</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('quemsomos.quemsomos') }}">Quem somos</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('contato.contato') }}">Contato</a>
-                <a type="button" class="banner__btn_white" href="{{ url_for('contato.contato') }}">
+              </li>
+              <li class="nav-item btn_2_via d-flex">
+                <a type="button" class="banner__btn_white w-100" href="{{ url_for('contato.contato') }}">
                     <p class="p-2 m-0 text-center">2ª via</p>
                 </a>
+              </li>
+              <li class="nav-item btn_login_desktop">
                 <div class="dropdown">
                     <button class="btn_dropdown d-flex align-items-center text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <p class="p-2 m-0">Login</p>
@@ -32,10 +56,13 @@
                       <li><a class="nav-link p-2 fw-normal" href="#">Sou Aluno</a></li>
                       <li><a class="nav-link p-2 fw-normal" href="#">Sou Professor</a></li>
                     </ul>
-                  </div>
-            </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
+      
     <div id="carouselContact" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselContact" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -49,7 +76,7 @@
                 <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
                 <p>Lorem ipsum dolor sit amet consectetur</p>
                 <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
-                    <p class="banner__btn_title p-3">Entre em contato</p>
+                    <p class="banner__btn_title">Entre em contato</p>
                 </a>
             </div>
           </div>
@@ -59,7 +86,7 @@
               <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
               <p>Lorem ipsum dolor sit amet consectetur</p>
               <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
-                <p class="banner__btn_title p-3">Entre em contato</p>
+                <p class="banner__btn_title">Entre em contato</p>
             </a>
             </div>
           </div>
@@ -69,7 +96,7 @@
               <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
               <p>Lorem ipsum dolor sit amet consectetur</p>
               <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
-                <p class="banner__btn_title p-3">Entre em contato</p>
+                <p class="banner__btn_title">Entre em contato</p>
             </a>
             </div>
           </div>
@@ -86,12 +113,12 @@
     {% block body %}{% endblock %}
     <div class="banner_contato">
         <div class="banner__info__logo">
-            <img src="https://img.freepik.com/vetores-premium/formatura-do-aluno-no-conceito-academico-da-faculdade-em-ilustracao-de-desenho-animado_201904-803.jpg" alt="" width="230px" height="230px" class="rounded-circle">
+            <img src="static/imagens/pingu.gif" alt="" class="rounded-circle banner__info__logo_img">
         </div>
 
         <div class="banner__info__actions">
-            <h4 class="text-break">Escolha educar-se, escolha o sucesso, escolha a UNES!</h4>
-            <p class="text-break">Fale com um de nossos especialistas e garanta o seu futuro promissor. </p>
+            <h4>Escolha educar-se, escolha o sucesso, escolha a UNES!</h4>
+            <p class="fw-normal">Fale com um de nossos especialistas e garanta o seu futuro promissor. </p>
             <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
                 <p class="banner__btn_title">Entre em contato</p>
             </a>
@@ -115,7 +142,7 @@
 
             <div class="rodape__info__tile">
                 <div class="rodape__info_title pb-5">
-                    <img src="../static/imagens/icone_logo.png" alt="Ícone Logo da Unes" width="40px" height="40px">
+                    <img src="../static/imagens/logo.png" alt="Ícone Logo da Unes">
                 </div>
                 <div class="rodape__info__social_media_icons">
                     <a class="social_media_icon border-1 border-white rounded-circle px-2 py-1" href="#">
@@ -134,9 +161,10 @@
                         <i class="mdi mdi-youtube"></i>
                     </a>
                 </div>
-                <p>2023 - Todos os direitos reservados</p>
+                <p class="rodape__texto m-0">2023 - Todos os direitos reservados</p>
             </div>
-            
+
+            <div class="rodape__divider_mobile"></div>
             
             <div class="rodape__info__tile">
                 <div class="rodape__info_title">
@@ -155,6 +183,8 @@
                 </ul>
             </div>
 
+            <div class="rodape__divider_mobile"></div>
+
             <div class="rodape__info__tile">
                 <div class="rodape__info_title">
                     <h5>Políticas</h5>
@@ -168,6 +198,8 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="rodape__divider_mobile"></div>
 
             <div class="rodape__info__tile">
                 <div class="rodape__info_title">
