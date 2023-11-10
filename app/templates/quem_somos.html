@@ -3,36 +3,43 @@
 {% block title %}Quem somos{% endblock %}
 
 {% block body %}
-<main class="apresentacao">
-    <section class="apresentacao__conteudo">
-        <div class="apresentacao__conteudo__texto">
-            {{ about_us | safe }}
+<section class="apresentacao__conteudo">
+    <div class="apresentacao__conteudo__texto">
+        <div class="d-flex row">
+            <h2 class="apresentacao__conteudo__texto_title text-black text-center fw-normal">Somos <span class="apresentacao__conteudo__texto_title_underline text-decoration-underline">apaixonados</span> pela educação: comprometidos com o conhecimento e o progresso!</h2>
+            <a type="button" class="banner__btn_white" href="{{ url_for('contato.contato') }}">
+                <p class="p-2 m-0">
+                    Saiba mais
+                    <i class="mdi mdi-arrow-down"></i>
+                </p>
+            </a>
         </div>
+    </div>
+</section>
 
-        <div class="apresentacao__conteudo">
-            <div class="apresentacao__conteudo_motivos container text-center">
-                <div class="apresentacao__conteudo_motivos_cards row justify-content-evenly px-4 py-5 rounded-4 shadow-sm gap-3">
-                    <h2 class="apresentacao__conteudo__texto_title p-0 pb-5">Motivos para estudar</h2>
-                    {% for reason in reasons %}
-                    <div class="card card_reasons border-0 rounded-2 bg-white shadow col-sm-12 col-lg-2">
-                        <img src="/static/imagens/pingu.gif" alt="" class="border-0 rounded-3">
-                        <div class="card-body">
-                          <h5 class="card-title p-2">{{ reason.get('title')}}</h5>
-                          <p class="card-text text-start fs-6 fw-lighter lh-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam aperiam harum mollitia, maxime.</p>
-                          
-                          <div class="d-flex justify-content-start pt-4 pb-1">
-                            <a href="#" class="nav-link p-1 border-0 fw-light">Saiba mais <i class="mdi mdi-arrow-right"></i></a>
-                          </div>
-                        </div>
+<section class="cards_vantagens d-flex row justify-content-center">
+    <div class="cards_vantagens__card card mb-3 rounded-4 shadow">
+        <div class="row g-5">
+            <div class="col-md-8">
+                <div class="card-body justify-content-between align-bottom">
+                    <h5 class="card-title fw-normal">Quem somos</h5>
+                    <p class="card-text"><strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Deserunt vero laboriosam error illo ea. A dolores voluptas reiciendis facilis tempore. </p>
+                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque et molestias voluptate fuga at molestiae voluptatibus.</p>
+                    <div class="d-flex pt-5">
+                        <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+                            <p class="banner__btn_title">Entre em contato</p>
+                        </a>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
+            <div class="col-md-4">
+                <img src="static/imagens/pingu.gif" class="img-fluid rounded-end-3" alt="...">
+            </div>
         </div>
+    </div>
 
-        <div class="apresentacao__conteudo__texto">
-            {{ objectives | safe }}
-        </div>
-    </section>
-</main>
+    <div class="apresentacao__conteudo__texto">
+        {{ objectives | safe }}
+    </div>
+</section>
 {% endblock %}
