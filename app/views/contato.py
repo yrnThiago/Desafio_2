@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, make_response, jsonify, request
 from app.components.base_title_text import base_title_text
-from app.components.base_input_text import base_input_text
 from app.constants.contato import CONTACT_TEXT, EMAIL_INPUT, ASSUNTO_INPUT, DESCRICAO_INPUT
 from app.controllers.Contato import ContatoController
 
