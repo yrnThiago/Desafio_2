@@ -65,6 +65,10 @@ body {
     transition: color 0.4s ease; 
 }
 
+.carousel-inner, .carousel-item {
+    height: 500px;
+}
+
 .apresentacao__conteudo__capa {
     display: flex;
     justify-content: center;
@@ -350,6 +354,14 @@ body {
 
     .btn_login_desktop {
         display: none;
+    }
+
+    .pingu-img {
+        height: 600px;
+    }
+
+    .carousel-inner, .carousel-item {
+        height: 100%;
     }
 
     .fale-conosco__modal {
