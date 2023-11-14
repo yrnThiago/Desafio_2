@@ -75,9 +75,9 @@
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
                 <p>Lorem ipsum dolor sit amet consectetur</p>
-                <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
-                    <p class="banner__btn_title">Entre em contato</p>
-                </a>
+                <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}" data-bs-toggle="modal" data-bs-target="#modalFaleConosco">
+                  <p class="banner__btn_title">Entre em contato</p>
+              </a>
             </div>
           </div>
           <div class="carousel-item" style="height: 500px;">
@@ -85,7 +85,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
               <p>Lorem ipsum dolor sit amet consectetur</p>
-              <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+              <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}" data-bs-toggle="modal" data-bs-target="#modalFaleConosco">
                 <p class="banner__btn_title">Entre em contato</p>
             </a>
             </div>
@@ -95,9 +95,9 @@
             <div class="carousel-caption d-none d-md-block">
               <h5 class="fw-bolder">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi veniam fugit</h5>
               <p>Lorem ipsum dolor sit amet consectetur</p>
-              <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+              <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}" data-bs-toggle="modal" data-bs-target="#modalFaleConosco">
                 <p class="banner__btn_title">Entre em contato</p>
-            </a>
+              </a>
             </div>
           </div>
         </div>
@@ -110,6 +110,54 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div class="modal fade" id="modalFaleConosco" tabindex="-1" aria-labelledby="modalFaleConoscoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="fale-conosco__modal row rounded-3 p-5 shadow-lg">
+              <div class="row justify-content-end p-0">
+                  <div class="col-1 text-end p-0">
+                      <button type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#modalFaleConosco" data-bs-whatever="">
+                          <i class="mdi mdi-close-circle-outline"></i>
+                      </button>
+                  </div>
+              </div>
+      
+              <div class="fale-conosco__img col">
+                  <img src="./static/imagens/pingu.gif" alt="" width="400px" height="100%" class="rounded-4">
+              </div>
+      
+              <div class="col text-start">
+                  <h1>Fale conosco</h1>
+                  <form class="formulario" action="{{ url_for('contato.add') }}" method="POST">
+                      <div class="formulario__email">
+                        <label for="email">E-mail*</label><br>
+                        <input class="formulario__input" type="email"id="email"name="email"placeholder="seuemail@email.com"required ></input>
+                      </div>
+          
+                      <div class="formulario__assunto">
+                        <label for="assunto">Assunto*</label><br>
+                        <input class="formulario__input" type="text"id="assunto"name="assunto"placeholder="Assunto"required ></input>
+                      </div>
+          
+                      <div class="formulario__descricao">
+                        <label for="descricao">Descrição*</label><br>
+                        <textarea class="formulario__input" rows="2"cols="32"name="descricao"id="descricao"placeholder="Isso é uma descrição..."required ></textarea>
+                      </div>
+          
+                      <div class="formulario__botao_enviar">
+                          <button type="submit" class="banner__btn">
+                              <p class="banner__btn_title">Entre em contato</p>
+                          </button>
+                          <p class="pt-3 fs-6 fw-normal text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis exercitationem, voluptate corrupti quaerat similique odio animi.</p>
+                      </div>
+          
+                  </form>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    </div>
     {% block body %}{% endblock %}
     <div class="banner_contato">
         <div class="banner__info__logo">
@@ -119,7 +167,7 @@
         <div class="banner__info__actions">
             <h4>Escolha educar-se, escolha o sucesso, escolha a UNES!</h4>
             <p class="fw-normal">Fale com um de nossos especialistas e garanta o seu futuro promissor. </p>
-            <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}">
+            <a type="button" class="banner__btn" href="{{ url_for('contato.contato') }}" data-bs-toggle="modal" data-bs-target="#modalFaleConosco">
                 <p class="banner__btn_title">Entre em contato</p>
             </a>
         </div>
