@@ -137,13 +137,12 @@ body {
 .formulario {
     display: flex;
     flex-direction: column;
-    margin: var(--margem-padrao);
-    gap: 5px;
+    gap: 15px;
     margin-top: 10px;
 }
 
 .formulario__input {
-    width: 250px;
+    width: 100%;
 }
 
 .banner_contato {
@@ -265,6 +264,10 @@ body {
     transition: var(--transicao-padrao);
 }
 
+.fale-conosco__modal {
+    background-color: var(--cor-de-fundo-primaria);
+}
+
 .cabecalho__logo:hover, .rodape__logo {
     transform: translateX(0px) scale(0.900);
 }
@@ -346,6 +349,15 @@ body {
     }
 
     .btn_login_desktop {
+        display: none;
+    }
+
+    .fale-conosco__modal {
+        margin: var(--margem-padrao);
+    }
+
+
+    .fale-conosco__img {
         display: none;
     }
 
